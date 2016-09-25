@@ -1,19 +1,18 @@
 {
   "name": "react-native-progressive-input",
   "version": "1.0.0",
-  "description": "",
+  "description": "Use this to create autocomplete text input which the text box can have both clear button and an activity indicator to show the background job",
   "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
-  "jest": {
-    "preset": "jest-react-native"
-  },
+  "repository": "https://github.com/khaiql/react-native-progressive-input",
   "keywords": [
-    "react-native"
+    "react-native",
+    "uber-text-input",
+    "autocomplete",
+    "progressive-input",
+    "clearable-input"
   ],
-  "author": "",
-  "license": "",
+  "author": "scott <scott.lee318@gmail.com>",
+  "license": "MIT",
   "peerDependencies": {
     "react-native": "^0.29.0"
   },
