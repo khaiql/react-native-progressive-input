@@ -1,6 +1,9 @@
 
 # Progressive Input
 ![Screenshot](https://github.com/khaiql/react-native-progressive-input/blob/master/screenshot.gif)
+
+[ProgressiveInput](https://github.com/khaiql/react-native-progressive-input) is used as a part of autocomplete solution. The control has clear button to clear text and activity indicator to show that background job is being performed.
+
 ## Getting started
 
 `$ npm install react-native-progressive-input --save`
@@ -50,4 +53,5 @@ export default Screen;
 | onFocus                | PropTypes.func                    |
 | onInputCleared         | PropTypes.func                    |
 
-
+## License
+MIT
