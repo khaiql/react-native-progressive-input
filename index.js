@@ -87,14 +87,17 @@ class ProgressiveInput extends Component {
   }
 
   _renderActivityIndicator() {
-    if (this.props.isLoading) {
-      return (
-        <ActivityIndicator
-          animating={this.props.isLoading}
-          style={[styles.activityIndicator, this.props.activityIndicatorStyle]}
-        />
-      );
+    var size = {};
+    if (!this.props.isLoading) {
+      size = {width: 0, height: 0};
     }
+
+    return (
+      <ActivityIndicator
+        animating={this.props.isLoading}
+        style={[styles.activityIndicator, this.props.activityIndicatorStyle, size]}
+      />
+    );
   }
 
   _renderClearButton() {
