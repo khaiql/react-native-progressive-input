@@ -1,0 +1,23 @@
+{
+  "name": "react-native-progress-text-input",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "jest-react-native"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "",
+  "license": "",
+  "peerDependencies": {
+    "react-native": "^0.29.0"
+  },
+  "dependencies": {
+    "react-native-vector-icons": "^2.1.0"
+  }
+}
