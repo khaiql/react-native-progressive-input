@@ -1,1 +1,1 @@
-require ProgressiveInput from './lib/ProgressiveInput';
+import ProgressiveInput from './lib/ProgressiveInput';
