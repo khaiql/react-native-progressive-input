@@ -13,10 +13,26 @@
 import ProgressiveInput from 'react-native-progressive-input';
 
 class Screen extends Component {
-  ...
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: '',
+      isLoading: false
+    };
+  }
+
+  performBackgroundJob() {
+    this.setState({isLoading: true});
+    // Do some intensive tasks
+  }
 
   render() {
-    <ProgressiveInput />
+    <ProgressiveInput
+      value={this.state.value}
+      isLoading={this.state.isLoading}
+      onChangeText={(text) => this.setState({value: text})}
+    />
   }
 }
 
