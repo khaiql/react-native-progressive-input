@@ -21,17 +21,23 @@ class Screen extends Component {
       isLoading: false
     };
   }
-
-  performBackgroundJob() {
-    this.setState({isLoading: true});
-    // Do some intensive tasks
+  
+  _onChangeText(text) {
+    this.setState({isLoading: true, value: text});
+    
+    fetch("YOUR_URL_FOR_GETTING_SUGGESTION")
+      .then((result) => {
+        // Process list of suggestions
+        
+        this.setState({isLoading: false});
+      });
   }
 
   render() {
     <ProgressiveInput
       value={this.state.value}
       isLoading={this.state.isLoading}
-      onChangeText={(text) => this.setState({value: text})}
+      onChangeText={this._onChangeText.bind(this)}
     />
   }
 }
