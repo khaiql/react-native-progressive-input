@@ -78,7 +78,7 @@ export default Screen;
 ## Author
 - Khai Le (Scott)
 - Email: khai.le@live.com
-- Blog: lequangkhai.wordpress.com
+- Blog: [lequangkhai.wordpress.com](https://lequangkhai.wordpress.com)
 
 ## License
 MIT
