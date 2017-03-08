@@ -8,6 +8,14 @@
 
 `$ npm install react-native-progressive-input --save`
 
+If you dont own the dependency `react-native-vector-icons`, please make sure you also run: 
+
+* `npm install react-native-vector-icons --save`
+
+* `react-native link`
+
+on the terminal. This will add some necessary fonts and Info.plist updates on your xcode project.
+
 ## Usage
 ```javascript
 import ProgressiveInput from 'react-native-progressive-input';
