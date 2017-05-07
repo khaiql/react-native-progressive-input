@@ -1,11 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import {
-  TextInput,
-  View,
-  ActivityIndicator,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import { TextInput, View, ActivityIndicator, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const styles = StyleSheet.create({
@@ -16,17 +10,18 @@ const styles = StyleSheet.create({
     borderColor: 'lightgrey',
   },
   clearIcon: {
-    marginLeft: 5
+    marginLeft: 5,
   },
   textInput: {
     flex: 1,
     height: 40,
-    marginLeft: 10
+    marginLeft: 10,
+    backgroundColor: 'white',
   },
   activityIndicator: {
     marginLeft: 5,
-    marginRight: 5
-  }
+    marginRight: 5,
+  },
 });
 
 class ProgressiveInput extends Component {
@@ -40,11 +35,11 @@ class ProgressiveInput extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({value: nextProps.value});
+    this.setState({ value: nextProps.value });
   }
 
   clearInput() {
-    this.setState({value: '', focus: false});
+    this.setState({ value: '', focus: false });
     if (this.props.onInputCleared) {
       this.props.onInputCleared();
     }
@@ -59,7 +54,7 @@ class ProgressiveInput extends Component {
       <View style={[styles.container, this.props.style]}>
         {this._renderClearButton()}
         <TextInput
-          ref={(input) => this.input = input}
+          ref={input => this.input = input}
           style={[styles.textInput, this.props.textInputStyle]}
           focus={this.state.focus}
           value={this.state.value}
@@ -87,11 +82,7 @@ class ProgressiveInput extends Component {
   }
 
   _renderActivityIndicator() {
-    var size = {};
-    if (!this.props.isLoading) {
-      size = {width: 0, height: 0};
-    }
-
+    let size = this.props.isLoading ? {} : { width: 0, height: 0 };
     return (
       <ActivityIndicator
         animating={this.props.isLoading}
@@ -104,7 +95,12 @@ class ProgressiveInput extends Component {
     if (this.state.showClearButton) {
       return (
         <TouchableOpacity onPress={() => this.clearInput()}>
-          <Icon name={this.props.clearButtonIcon} size={this.props.clearButtonSize} style={[ styles.clearIcon, this.props.clearButtonStyle ]} color={this.props.clearButtonColor} />
+          <Icon
+            name={this.props.clearButtonIcon}
+            size={this.props.clearButtonSize}
+            style={[styles.clearIcon, this.props.clearButtonStyle]}
+            color={this.props.clearButtonColor}
+          />
         </TouchableOpacity>
       );
     }
@@ -118,7 +114,7 @@ class ProgressiveInput extends Component {
   }
 
   _onChangeText(text) {
-    this.setState({value: text});
+    this.setState({ value: text });
     this._shouldShowClearButton(text);
     if (this.props.onChangeText) {
       this.props.onChangeText(text);
@@ -126,17 +122,17 @@ class ProgressiveInput extends Component {
   }
 
   _shouldShowClearButton(value) {
-    let v = value || this.state.value;
-    let showClearButton = v ? true : false;
-    this.setState({showClearButton});
+    const v = value || this.state.value;
+    const showClearButton = v ? true : false;
+    this.setState({ showClearButton });
   }
 
   _onBlur() {
-    this.setState({showClearButton: false});
+    this.setState({ showClearButton: false });
   }
 }
 
-let textInputProps = {
+const textInputProps = ({
   autoCorrect,
   keyboardType,
   multiline,
@@ -150,7 +146,7 @@ let textInputProps = {
   multiline,
   onEndEditing,
   onChange,
-} = TextInput.propTypes;
+} = TextInput.propTypes);
 
 ProgressiveInput.propTypes = {
   ...textInputProps,
@@ -165,7 +161,7 @@ ProgressiveInput.propTypes = {
   onBlur: PropTypes.func,
   onChangeText: PropTypes.func,
   onFocus: PropTypes.func,
-  onInputCleared: PropTypes.func
+  onInputCleared: PropTypes.func,
 };
 
 ProgressiveInput.defaultProps = {
