@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: 'lightgrey',
+    backgroundColor: 'white',
   },
   clearIcon: {
     marginLeft: 5,
@@ -16,7 +17,6 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 40,
     marginLeft: 10,
-    backgroundColor: 'white',
   },
   activityIndicator: {
     marginLeft: 5,
