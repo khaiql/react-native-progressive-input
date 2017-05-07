@@ -8,6 +8,8 @@
   "dependencies": {
     "expo": "16.0.0",
     "react": "16.0.0-alpha.6",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-16.0.0.tar.gz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-16.0.0.tar.gz",
+    "react-native-progressive-input": "^1.0.1",
+    "react-native-vector-icons": "^4.1.0"
   }
 }
