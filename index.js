@@ -75,6 +75,7 @@ class ProgressiveInput extends Component {
           multiline={this.props.multiline}
           onEndEditing={this.props.onEndEditing}
           onChange={this.props.onChange}
+          underlineColorAndroid={this.props.underlineColorAndroid}
         />
         {this._renderActivityIndicator()}
       </View>
@@ -162,6 +163,7 @@ ProgressiveInput.propTypes = {
   onChangeText: PropTypes.func,
   onFocus: PropTypes.func,
   onInputCleared: PropTypes.func,
+  underlineColorAndroid: PropTypes.string
 };
 
 ProgressiveInput.defaultProps = {
@@ -169,6 +171,7 @@ ProgressiveInput.defaultProps = {
   clearButtonIcon: 'times-circle',
   clearButtonColor: 'lightgrey',
   clearButtonSize: 20,
+  underlineColorAndroid: 'transparent'
 };
 
 export default ProgressiveInput;
