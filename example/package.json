@@ -1,15 +1,15 @@
 {
-  "name": "example",
+  "name": "progressive-input-example",
   "version": "0.0.0",
-  "description": "Hello Expo!",
+  "description": "A simple demo for 'react-native-progressive-input'",
   "author": null,
   "private": true,
-  "main": "main.js",
+  "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
-    "expo": "16.0.0",
-    "react": "16.0.0-alpha.6",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-16.0.0.tar.gz",
-    "react-native-progressive-input": "^1.0.2",
+    "expo": "23.0.1",
+    "react": "16.1.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
+    "react-native-progressive-input": "../react-native-progressive-input-1.1.0.tgz",
     "react-native-vector-icons": "^4.1.0"
   }
 }
