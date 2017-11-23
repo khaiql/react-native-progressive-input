@@ -6,12 +6,12 @@ import {
   Text,
   View,
   ListView,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 const GOOGLE_API_KEY = 'AIzaSyB7-8qph-zszuxivIm7cwT5b37D22bm1A4';
 const ds = new ListView.DataSource({
-  rowHasChanged: (r1, r2) => r1.id !== r2.id
+  rowHasChanged: (r1, r2) => r1.id !== r2.id,
 });
 const latitudeDelta = 0.0922;
 const longitudeDelta = 0.0421;
@@ -22,7 +22,7 @@ export default class App extends React.Component {
     this.state = {
       isLoading: false,
       dataSource: ds.cloneWithRows([]),
-      value: ''
+      value: '',
     };
     this.searchLocation = this.searchLocation.bind(this);
     this.renderRow = this.renderRow.bind(this);
@@ -31,13 +31,15 @@ export default class App extends React.Component {
   }
 
   async searchLocation(query) {
-    const url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?key=${GOOGLE_API_KEY}&input=${query}`;
+    const url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?key=${
+      GOOGLE_API_KEY
+    }&input=${query}`;
     this.setState({ isLoading: true, value: query });
     const response = await fetch(url);
     const jsonResponse = await response.json();
     this.setState({
       isLoading: false,
-      dataSource: ds.cloneWithRows(jsonResponse.predictions)
+      dataSource: ds.cloneWithRows(jsonResponse.predictions),
     });
   }
 
@@ -60,7 +62,7 @@ export default class App extends React.Component {
     this.setState({
       value: '',
       isLoading: false,
-      dataSource: ds.cloneWithRows([])
+      dataSource: ds.cloneWithRows([]),
     });
   }
 
@@ -68,9 +70,11 @@ export default class App extends React.Component {
     this.setState({
       value: prediction.description,
       dataSource: ds.cloneWithRows([]),
-      isLoading: true
+      isLoading: true,
     });
-    const url = `https://maps.googleapis.com/maps/api/place/details/json?placeid=${prediction.place_id}&key=${GOOGLE_API_KEY}`;
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?placeid=${
+      prediction.place_id
+    }&key=${GOOGLE_API_KEY}`;
     const response = await fetch(url);
     const jsonResponse = await response.json();
     const { lat, lng } = jsonResponse.result.geometry.location;
@@ -78,7 +82,7 @@ export default class App extends React.Component {
       longitude: lng,
       latitude: lat,
       latitudeDelta,
-      longitudeDelta
+      longitudeDelta,
     });
     this.setState({ isLoading: false });
   }
@@ -93,7 +97,7 @@ export default class App extends React.Component {
             latitude: 37.78825,
             longitude: -122.4324,
             latitudeDelta,
-            longitudeDelta
+            longitudeDelta,
           }}
         />
         <ProgressiveInput
@@ -122,32 +126,32 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'grey',
     flexDirection: 'column',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
   },
   map: {
     position: 'absolute',
     top: 0,
     right: 0,
     left: 0,
-    bottom: 0
+    bottom: 0,
   },
   progressiveInput: {
     marginTop: 20,
     marginLeft: 10,
-    marginRight: 10
+    marginRight: 10,
   },
   listViewContainer: {
-    flex: 0
+    flex: 0,
   },
   listView: {
     backgroundColor: 'white',
-    margin: 10
+    margin: 10,
   },
   listItem: {
-    padding: 10
+    padding: 10,
   },
   listItemSeparator: {
     borderWidth: 0.5,
-    borderColor: 'lightgrey'
-  }
+    borderColor: 'lightgrey',
+  },
 });
