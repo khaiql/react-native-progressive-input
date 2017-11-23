@@ -1,6 +1,6 @@
 {
   "name": "react-native-progressive-input",
-  "version": "1.1.1",
+  "version": "1.1.0",
   "description":
     "Use this to create autocomplete text input which the text box can have both clear button and an activity indicator to show the background job",
   "main": "index.js",
