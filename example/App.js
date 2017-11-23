@@ -1,15 +1,15 @@
-import Expo, { Components } from "expo";
-import React from "react";
-import ProgressiveInput from "react-native-progressive-input";
+import Expo, { Components } from 'expo';
+import React from 'react';
+import ProgressiveInput from 'react-native-progressive-input';
 import {
   StyleSheet,
   Text,
   View,
   ListView,
   TouchableOpacity
-} from "react-native";
+} from 'react-native';
 
-const GOOGLE_API_KEY = "AIzaSyB7-8qph-zszuxivIm7cwT5b37D22bm1A4";
+const GOOGLE_API_KEY = 'AIzaSyB7-8qph-zszuxivIm7cwT5b37D22bm1A4';
 const ds = new ListView.DataSource({
   rowHasChanged: (r1, r2) => r1.id !== r2.id
 });
@@ -22,7 +22,7 @@ export default class App extends React.Component {
     this.state = {
       isLoading: false,
       dataSource: ds.cloneWithRows([]),
-      value: ""
+      value: ''
     };
     this.searchLocation = this.searchLocation.bind(this);
     this.renderRow = this.renderRow.bind(this);
@@ -58,7 +58,7 @@ export default class App extends React.Component {
 
   onInputCleared() {
     this.setState({
-      value: "",
+      value: '',
       isLoading: false,
       dataSource: ds.cloneWithRows([])
     });
@@ -120,12 +120,12 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "grey",
-    flexDirection: "column",
-    justifyContent: "flex-start"
+    backgroundColor: 'grey',
+    flexDirection: 'column',
+    justifyContent: 'flex-start'
   },
   map: {
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     right: 0,
     left: 0,
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     flex: 0
   },
   listView: {
-    backgroundColor: "white",
+    backgroundColor: 'white',
     margin: 10
   },
   listItem: {
@@ -148,6 +148,6 @@ const styles = StyleSheet.create({
   },
   listItemSeparator: {
     borderWidth: 0.5,
-    borderColor: "lightgrey"
+    borderColor: 'lightgrey'
   }
 });
