@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TextInput, View, ActivityIndicator, TouchableOpacity, StyleSheet } from 'react-native';
+import {
+  TextInput,
+  View,
+  ActivityIndicator,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const styles = StyleSheet.create({
@@ -55,7 +61,7 @@ class ProgressiveInput extends Component {
       <View style={[styles.container, this.props.style]}>
         {this._renderClearButton()}
         <TextInput
-          ref={input => this.input = input}
+          ref={input => (this.input = input)}
           style={[styles.textInput, this.props.textInputStyle]}
           focus={this.state.focus}
           value={this.state.value}
@@ -88,7 +94,11 @@ class ProgressiveInput extends Component {
     return (
       <ActivityIndicator
         animating={this.props.isLoading}
-        style={[styles.activityIndicator, this.props.activityIndicatorStyle, size]}
+        style={[
+          styles.activityIndicator,
+          this.props.activityIndicatorStyle,
+          size,
+        ]}
       />
     );
   }
@@ -164,7 +174,7 @@ ProgressiveInput.propTypes = {
   onChangeText: PropTypes.func,
   onFocus: PropTypes.func,
   onInputCleared: PropTypes.func,
-  underlineColorAndroid: PropTypes.string
+  underlineColorAndroid: PropTypes.string,
 };
 
 ProgressiveInput.defaultProps = {
@@ -172,7 +182,7 @@ ProgressiveInput.defaultProps = {
   clearButtonIcon: 'times-circle',
   clearButtonColor: 'lightgrey',
   clearButtonSize: 20,
-  underlineColorAndroid: 'transparent'
+  underlineColorAndroid: 'transparent',
 };
 
 export default ProgressiveInput;
