@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "Progressive Input Example",
+    "description": "A simple demo for 'react-native-progressive-input'",
+    "slug": "progressive-input-example",
+    "privacy": "public",
+    "sdkVersion": "23.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "primaryColor": "#cccccc",
+    "icon": "./assets/icons/app.png",
+    "loading": {
+      "icon": "./assets/icons/loading.png",
+      "hideExponentText": false
+    }
+  }
+}
