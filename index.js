@@ -105,7 +105,7 @@ class ProgressiveInput extends Component {
   };
 
   _renderClearButton = () => {
-    if (this.state.showClearButton) {
+    if (this.state.showClearButton && this.props.showClearButton) {
       return (
         <TouchableOpacity onPress={() => this.clearInput()}>
           <Ionicons
