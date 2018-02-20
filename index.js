@@ -19,6 +19,7 @@ class ProgressiveInput extends Component {
     clearButtonColor: PropTypes.string,
     clearButtonSize: PropTypes.number,
     clearButtonStyle: PropTypes.object,
+    clearButtonEnabled: PropTypes.bool,
     activityIndicatorStyle: ActivityIndicator.propTypes.style,
     onBlur: PropTypes.func,
     onChangeText: PropTypes.func,
@@ -105,7 +106,7 @@ class ProgressiveInput extends Component {
   };
 
   _renderClearButton = () => {
-    if (this.state.showClearButton && this.props.showClearButton) {
+    if (this.state.showClearButton && this.props.clearButtonEnabled) {
       return (
         <TouchableOpacity onPress={() => this.clearInput()}>
           <Ionicons
@@ -140,7 +141,12 @@ class ProgressiveInput extends Component {
     this.setState({ showClearButton });
   };
 
-  _onBlur = () => this.setState({ showClearButton: false });
+  _onBlur = () => {
+    this.setState({ showClearButton: false })
+    if (this.props.onBlur) {
+      this.props.onBlur();
+    }
+  };
 }
 
 const styles = StyleSheet.create({
