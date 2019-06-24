@@ -6,6 +6,7 @@ import {
   ActivityIndicator,
   TouchableOpacity,
   StyleSheet,
+  ViewPropTypes
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'; // 6.2.2
 
@@ -19,7 +20,7 @@ class ProgressiveInput extends Component {
     clearButtonColor: PropTypes.string,
     clearButtonSize: PropTypes.number,
     clearButtonStyle: PropTypes.object,
-    activityIndicatorStyle: ActivityIndicator.propTypes.style,
+    activityIndicatorStyle: ViewPropTypes.style,
     onBlur: PropTypes.func,
     onChangeText: PropTypes.func,
     onFocus: PropTypes.func,
